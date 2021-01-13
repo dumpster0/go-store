@@ -28,6 +28,7 @@ func ProcessSet(split []string, db *leveldb.DB) bool {
 		fmt.Println("no db open")
 		return false
 	}
+	split = append(split[:2], strings.Join(split[2:], " "))
 	if len(split) != 3 {
 		fmt.Println("invalid SET command")
 		return false
